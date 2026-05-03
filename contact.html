@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Devis – BATI PRO & CO | Mouy, Oise (60)</title>
+    <meta name="description" content="Contactez BATI PRO & CO pour un devis gratuit. Rénovation, gros œuvre, isolation – Mouy et toute l'Oise. Réponse sous 48h.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<header class="header" id="header">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" width="40" height="40">
+                <polygon points="4,16 27,28 27,52 4,40" fill="#0D8A99"/>
+                <polygon points="27,28 50,16 50,40 27,52" fill="#0A6E7C"/>
+                <polygon points="4,16 27,4 50,16 27,28" fill="#2EC4D6"/>
+                <text x="27" y="42" font-family="Arial Black,Arial" font-weight="900" font-size="10" fill="white" text-anchor="middle">BPC</text>
+            </svg>
+            <span class="brand-name">BATI PRO</span>
+            <span class="brand-amp">&amp; CO</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html#apropos">À propos</a>
+            <a href="index.html#prestations">Prestations</a>
+            <a href="realisations.html">Réalisations</a>
+            <a href="index.html#avis">Avis</a>
+            <a href="contact.html" class="nav-btn active">Devis gratuit</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+</header>
+
+
+<!-- ══ PAGE HERO ══ -->
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <p class="section-eyebrow" style="color:rgba(255,255,255,.55);">Parlons de votre projet</p>
+        <h1>Devis Gratuit</h1>
+        <p>Réponse garantie sous 48h · Pas d'engagement</p>
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a>
+            <i class="fa-solid fa-chevron-right" style="font-size:.6rem"></i>
+            <span>Contact</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- ══ CONTENU CONTACT ══ -->
+<div class="contact-section">
+
+    <!-- ── COLONNE GAUCHE : infos ── -->
+    <div class="contact-info">
+        <p class="section-eyebrow">Nous contacter</p>
+        <h2>Miroslav <br>vous répond.</h2>
+        <div class="info-divider"></div>
+        <p>Décrivez-nous votre projet, nous vous recontactons rapidement pour un échange gratuit et sans engagement. Nous intervenons dans tout l'Oise (60).</p>
+
+        <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+                <h4>Téléphone</h4>
+                <a href="tel:0686922927">06 86 92 29 27</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+                <h4>Email</h4>
+                <a href="mailto:contactbatipro.co@gmail.com">contactbatipro.co@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+                <h4>Adresse</h4>
+                <p>15 rue Noël Ruffier<br>60 250 MOUY</p>
+            </div>
+        </div>
+
+        <div class="horaires">
+            <h4>Horaires</h4>
+            <div class="horaire-row"><strong>Lundi – Vendredi</strong><span>7h00 – 18h00</span></div>
+            <div class="horaire-row"><strong>Samedi</strong><span>8h00 – 13h00</span></div>
+            <div class="horaire-row"><strong>Dimanche</strong><span>Fermé</span></div>
+        </div>
+
+        <!-- Map placeholder — remplacez par un vrai iframe Google Maps si vous voulez -->
+        <a href="https://maps.google.com/?q=15+rue+Noël+Ruffier+60250+Mouy"
+           target="_blank" rel="noopener"
+           style="display:flex;align-items:center;gap:.6rem;margin-top:1.5rem;font-size:.82rem;font-weight:700;color:var(--c-teal);">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Voir sur Google Maps
+        </a>
+    </div>
+
+    <!-- ── COLONNE DROITE : formulaire ── -->
+    <div class="contact-form-wrap">
+        <h3>Demande de devis gratuit</h3>
+        <p>Remplissez le formulaire, nous vous rappelons dans les 48h pour définir votre projet ensemble.</p>
+
+        <!-- Messages retour PHP -->
+        <div class="alert alert-success" id="alertSuccess">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Votre demande a bien été envoyée ! Miroslav vous recontactera sous 48h.</span>
+        </div>
+        <div class="alert alert-error" id="alertError">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span id="errorMsg">Une erreur est survenue, veuillez réessayer ou appeler directement au 06 86 92 29 27.</span>
+        </div>
+
+        <form id="contactForm" novalidate>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label>Prénom <span class="form-req">*</span></label>
+                    <input type="text" name="prenom" id="prenom" placeholder="Jean" autocomplete="given-name">
+                </div>
+                <div class="form-field">
+                    <label>Nom <span class="form-req">*</span></label>
+                    <input type="text" name="nom" id="nom" placeholder="Dupont" autocomplete="family-name">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label>Téléphone <span class="form-req">*</span></label>
+                    <input type="tel" name="telephone" id="telephone" placeholder="06 XX XX XX XX" autocomplete="tel">
+                </div>
+                <div class="form-field">
+                    <label>Email <span class="form-req">*</span></label>
+                    <input type="email" name="email" id="email" placeholder="jean@email.fr" autocomplete="email">
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label>Type de travaux <span class="form-req">*</span></label>
+                <select name="type_travaux" id="type_travaux">
+                    <option value="" disabled selected>Sélectionnez une prestation…</option>
+                    <option value="Gros œuvre / Maçonnerie">Gros œuvre / Maçonnerie</option>
+                    <option value="Extension / Agrandissement">Extension / Agrandissement</option>
+                    <option value="Isolation thermique">Isolation thermique (RGE)</option>
+                    <option value="Rénovation intérieure complète">Rénovation intérieure complète</option>
+                    <option value="Salle de bain clé en main">Salle de bain clé en main</option>
+                    <option value="Carrelage / Faïence">Carrelage / Faïence</option>
+                    <option value="Peinture / Plâtrerie">Peinture / Plâtrerie</option>
+                    <option value="Menuiseries PVC / Aluminium">Menuiseries PVC / Aluminium</option>
+                    <option value="Autre">Autre (préciser dans le message)</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label>Ville / Code postal du chantier</label>
+                <input type="text" name="localisation" id="localisation" placeholder="Ex : Beauvais, 60000">
+            </div>
+
+            <div class="form-field">
+                <label>Budget estimé</label>
+                <select name="budget" id="budget">
+                    <option value="" disabled selected>Fourchette budgétaire (facultatif)</option>
+                    <option value="Moins de 5 000 €">Moins de 5 000 €</option>
+                    <option value="5 000 – 15 000 €">5 000 – 15 000 €</option>
+                    <option value="15 000 – 30 000 €">15 000 – 30 000 €</option>
+                    <option value="30 000 – 60 000 €">30 000 – 60 000 €</option>
+                    <option value="Plus de 60 000 €">Plus de 60 000 €</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label>Description du projet <span class="form-req">*</span></label>
+                <textarea name="message" id="message" placeholder="Décrivez votre projet : surface concernée, état actuel, contraintes particulières, délais souhaités…"></textarea>
+            </div>
+
+            <!-- Upload photos (envoyées en pièce jointe) -->
+            <div class="form-field">
+                <label>Photos du chantier <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--c-muted)">(facultatif · jpg/png · max 5 Mo)</span></label>
+                <div class="upload-zone">
+                    <label for="photos">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>Cliquez pour ajouter des photos</span>
+                        <input type="file" name="photos[]" id="photos" multiple accept="image/jpeg,image/png,image/webp" style="display:none" onchange="updateFileLabel(this)">
+                    </label>
+                </div>
+                <span id="fileLabel" style="font-size:.75rem;color:var(--c-muted);margin-top:.4rem;display:block;"></span>
+            </div>
+
+            <!-- Anti-spam honeypot (champ caché) -->
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+            <!-- RGPD -->
+            <div class="form-field" style="display:flex;align-items:flex-start;gap:.75rem;">
+                <input type="checkbox" name="rgpd" id="rgpd" style="margin-top:3px;width:auto;accent-color:var(--c-teal);">
+                <label for="rgpd" style="text-transform:none;letter-spacing:0;font-weight:500;font-size:.8rem;color:var(--c-slate);cursor:pointer;">
+                    J'accepte que mes données soient utilisées pour traiter ma demande de devis, conformément à la <a href="mentions-legales.html" style="color:var(--c-teal)">politique de confidentialité</a>. <span class="form-req">*</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+                <i class="fa-solid fa-paper-plane"></i>
+                Envoyer ma demande
+            </button>
+            <p class="form-note">
+                <i class="fa-solid fa-lock" style="color:var(--c-teal)"></i>
+                Données sécurisées · Devis gratuit &amp; sans engagement
+            </p>
+
+        </form>
+    </div>
+</div>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="brand-name">BATI PRO</span><span class="brand-amp"> &amp; CO</span>
+            <p>Votre partenaire de confiance pour tous vos travaux dans l'Oise. Expertise, rigueur, passion du travail bien fait.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#prestations">Prestations</a></li>
+                <li><a href="realisations.html">Réalisations</a></li>
+                <li><a href="index.html#avis">Avis clients</a></li>
+                <li><a href="contact.html">Devis gratuit</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p><i class="fa-solid fa-location-dot"></i> 15 rue Noël Ruffier, 60 250 Mouy</p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:0686922927">06 86 92 29 27</a></p>
+            <p><i class="fa-solid fa-envelope"></i><a href="mailto:contactbatipro.co@gmail.com">contactbatipro.co@gmail.com</a></p>
+            <p><i class="fa-solid fa-clock"></i> Lun–Sam : 7h00 – 18h00</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <p>© 2025 BATI PRO &amp; CO — Miroslav KONALIEV</p>
+            <p><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html">Politique de confidentialité</a></p>
+        </div>
+    </div>
+</footer>
+
+<div class="mobile-cta">
+    <a href="tel:0686922927" class="mc-call"><i class="fa-solid fa-phone"></i> Appeler</a>
+    <a href="#contactForm" class="mc-devis">Devis express</a>
+</div>
+
+<script>
+/* ── Nav ── */
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+const backdrop = document.getElementById('navBackdrop');
+function setMenu(open) {
+    burger.setAttribute('aria-expanded', open);
+    burger.classList.toggle('is-open', open);
+    navLinks.classList.toggle('is-open', open);
+    backdrop.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+}
+burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('is-open')));
+backdrop.addEventListener('click', () => setMenu(false));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('is-scrolled', window.scrollY > 40);
+});
+function fixMobilePad() {
+    const cta = document.querySelector('.mobile-cta');
+    document.body.style.paddingBottom = window.getComputedStyle(cta).display !== 'none' ? cta.offsetHeight + 'px' : '';
+}
+window.addEventListener('resize', fixMobilePad);
+fixMobilePad();
+
+/* ── Label upload ── */
+function updateFileLabel(input) {
+    const lbl = document.getElementById('fileLabel');
+    if (input.files.length === 0) { lbl.textContent = ''; return; }
+    lbl.textContent = input.files.length === 1
+        ? input.files[0].name
+        : input.files.length + ' fichiers sélectionnés';
+}
+
+/* ── Validation & soumission AJAX vers send-mail.php ── */
+const form       = document.getElementById('contactForm');
+const submitBtn  = document.getElementById('submitBtn');
+const alertOk    = document.getElementById('alertSuccess');
+const alertErr   = document.getElementById('alertError');
+const errMsg     = document.getElementById('errorMsg');
+
+function showAlert(el) {
+    alertOk.classList.remove('show');
+    alertErr.classList.remove('show');
+    el.classList.add('show');
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    /* Validation basique côté client */
+    const required = ['prenom','nom','telephone','email','type_travaux','message','rgpd'];
+    let valid = true;
+    required.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const ok = el.type === 'checkbox' ? el.checked : el.value.trim() !== '';
+        el.style.borderColor = ok ? '' : '#E24B4A';
+        if (!ok) valid = false;
+    });
+
+    /* Validation email */
+    const emailEl = document.getElementById('email');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+        emailEl.style.borderColor = '#E24B4A';
+        valid = false;
+    }
+
+    if (!valid) {
+        errMsg.textContent = 'Merci de remplir tous les champs obligatoires (*).';
+        showAlert(alertErr);
+        return;
+    }
+
+    /* Envoi AJAX avec FormData (supporte les fichiers) */
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Envoi en cours…';
+
+    const formData = new FormData(form);
+
+    try {
+        const res  = await fetch('send-mail.php', { method: 'POST', body: formData });
+        const data = await res.json();
+
+        if (data.success) {
+            showAlert(alertOk);
+            form.reset();
+            document.getElementById('fileLabel').textContent = '';
+        } else {
+            errMsg.textContent = data.message || 'Erreur lors de l\'envoi. Appelez-nous au 06 86 92 29 27.';
+            showAlert(alertErr);
+        }
+    } catch (err) {
+        errMsg.textContent = 'Impossible de joindre le serveur. Veuillez appeler le 06 86 92 29 27.';
+        showAlert(alertErr);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Envoyer ma demande';
+    }
+});
+
+/* Réinitialiser bordure rouge au focus */
+form.querySelectorAll('input, select, textarea').forEach(el => {
+    el.addEventListener('focus', () => el.style.borderColor = '');
+});
+</script>
+</body>
+</html>

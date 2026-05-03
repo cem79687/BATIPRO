@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations – BATI PRO & CO | Chantiers dans l'Oise</title>
+    <meta name="description" content="Découvrez nos réalisations : gros œuvre, isolation, rénovation. BATI PRO & CO intervient dans toute l'Oise depuis Mouy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<header class="header" id="header">
+    <div class="nav-inner">
+        <a href="index.html" class="brand">
+            <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" width="40" height="40">
+                <polygon points="4,16 27,28 27,52 4,40" fill="#0D8A99"/>
+                <polygon points="27,28 50,16 50,40 27,52" fill="#0A6E7C"/>
+                <polygon points="4,16 27,4 50,16 27,28" fill="#2EC4D6"/>
+                <text x="27" y="42" font-family="Arial Black,Arial" font-weight="900" font-size="10" fill="white" text-anchor="middle">BPC</text>
+            </svg>
+            <span class="brand-name">BATI PRO</span>
+            <span class="brand-amp">&amp; CO</span>
+        </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html#apropos">À propos</a>
+            <a href="index.html#prestations">Prestations</a>
+            <a href="realisations.html" class="active">Réalisations</a>
+            <a href="index.html#avis">Avis</a>
+            <a href="contact.html" class="nav-btn">Devis gratuit</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+</header>
+
+
+<!-- ══ PAGE HERO ══ -->
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <p class="section-eyebrow" style="color:rgba(255,255,255,.55);">Portfolio</p>
+        <h1>Nos Réalisations</h1>
+        <p>Chantiers réalisés dans l'Oise — gros œuvre, isolation et rénovation</p>
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a>
+            <i class="fa-solid fa-chevron-right" style="font-size:.6rem"></i>
+            <span>Réalisations</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- ══ GALERIE ══ -->
+<section class="realisations-section">
+
+    <!-- FILTRES -->
+    <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Tous les projets</button>
+        <button class="filter-btn" data-filter="maconnerie">Gros Œuvre</button>
+        <button class="filter-btn" data-filter="isolation">Isolation</button>
+        <button class="filter-btn" data-filter="renovation">Rénovation</button>
+    </div>
+
+    <!-- GRILLE
+         ─────────────────────────────────────────────────────────────────
+         Pour ajouter vos photos, remplacez :
+           <div class="gallery-placeholder">…</div>
+         par :
+           <img src="images/nom-photo.jpg" alt="Description du chantier" loading="lazy">
+
+         Ou ajoutez directement src sur la balise img déjà présente.
+         ─────────────────────────────────────────────────────────────────
+    -->
+    <div class="gallery-grid" id="galleryGrid">
+
+        <!-- 1 -->
+        <div class="gallery-item gallery-item--wide" data-cat="maconnerie">
+            <!-- <img src="images/extension-mouy.jpg" alt="Extension maison Mouy" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Gros Œuvre</span>
+                <p>Extension R+1 — Mouy</p>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="gallery-item" data-cat="renovation">
+            <!-- <img src="images/sdb-beauvais.jpg" alt="Salle de bain Beauvais" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Rénovation</span>
+                <p>SdB clé en main — Beauvais</p>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="gallery-item gallery-item--tall" data-cat="maconnerie">
+            <!-- <img src="images/mur-porteur-allonne.jpg" alt="Mur porteur Allonne" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Gros Œuvre</span>
+                <p>Mur porteur + IPN — Allonne</p>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="gallery-item" data-cat="isolation">
+            <!-- <img src="images/combles-clermont.jpg" alt="Isolation combles Clermont" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Isolation</span>
+                <p>Combles perdus — Clermont</p>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="gallery-item" data-cat="renovation">
+            <!-- <img src="images/salon-senlis.jpg" alt="Rénovation salon Senlis" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Rénovation</span>
+                <p>Salon &amp; parquet — Senlis</p>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="gallery-item" data-cat="isolation">
+            <!-- <img src="images/ite-facade.jpg" alt="ITE Façade Crèvecœur" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Isolation</span>
+                <p>ITE Façade — Crèvecœur</p>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="gallery-item gallery-item--wide" data-cat="renovation">
+            <!-- <img src="images/carrelage-cuisine.jpg" alt="Carrelage cuisine Noyon" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Rénovation</span>
+                <p>Carrelage cuisine — Noyon</p>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="gallery-item" data-cat="maconnerie">
+            <!-- <img src="images/facade-compiegne.jpg" alt="Façade neuve Compiègne" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Gros Œuvre</span>
+                <p>Façade neuve — Compiègne</p>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="gallery-item" data-cat="isolation">
+            <!-- <img src="images/menuiseries.jpg" alt="Menuiseries PVC" loading="lazy"> -->
+            <div class="gallery-placeholder">
+                <i class="fa-solid fa-image"></i>
+                <span>Votre photo ici</span>
+            </div>
+            <div class="gallery-overlay">
+                <span class="gallery-tag">Isolation</span>
+                <p>Menuiseries PVC — Méru</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CTA bas de page -->
+    <div style="text-align:center; margin-top: 4rem;">
+        <p style="color:var(--c-slate); font-size:.95rem; margin-bottom:1.5rem;">Votre projet sera notre prochaine réalisation</p>
+        <a href="contact.html" class="btn-cta" style="margin:0 auto;">
+            Demander un devis gratuit <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="brand-name">BATI PRO</span><span class="brand-amp"> &amp; CO</span>
+            <p>Votre partenaire de confiance pour tous vos travaux dans l'Oise. Expertise, rigueur, passion du travail bien fait.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html#apropos">À propos</a></li>
+                <li><a href="index.html#prestations">Prestations</a></li>
+                <li><a href="realisations.html">Réalisations</a></li>
+                <li><a href="index.html#avis">Avis clients</a></li>
+                <li><a href="contact.html">Devis gratuit</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p><i class="fa-solid fa-location-dot"></i> 15 rue Noël Ruffier, 60 250 Mouy</p>
+            <p><i class="fa-solid fa-phone"></i><a href="tel:0686922927">06 86 92 29 27</a></p>
+            <p><i class="fa-solid fa-envelope"></i><a href="mailto:contactbatipro.co@gmail.com">contactbatipro.co@gmail.com</a></p>
+            <p><i class="fa-solid fa-clock"></i> Lun–Sam : 7h00 – 18h00</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <p>© 2025 BATI PRO &amp; CO — Miroslav KONALIEV</p>
+            <p><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html">Politique de confidentialité</a></p>
+        </div>
+    </div>
+</footer>
+
+<div class="mobile-cta">
+    <a href="tel:0686922927" class="mc-call"><i class="fa-solid fa-phone"></i> Appeler</a>
+    <a href="contact.html" class="mc-devis">Devis express</a>
+</div>
+
+<script>
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+const backdrop = document.getElementById('navBackdrop');
+function setMenu(open) {
+    burger.setAttribute('aria-expanded', open);
+    burger.classList.toggle('is-open', open);
+    navLinks.classList.toggle('is-open', open);
+    backdrop.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+}
+burger.addEventListener('click', () => setMenu(!navLinks.classList.contains('is-open')));
+backdrop.addEventListener('click', () => setMenu(false));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('is-scrolled', window.scrollY > 40);
+});
+function fixMobilePad() {
+    const cta = document.querySelector('.mobile-cta');
+    document.body.style.paddingBottom = window.getComputedStyle(cta).display !== 'none' ? cta.offsetHeight + 'px' : '';
+}
+window.addEventListener('resize', fixMobilePad);
+fixMobilePad();
+
+/* Filtres galerie */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        galleryItems.forEach(item => {
+            const show = f === 'all' || item.dataset.cat === f;
+            item.style.opacity    = show ? '1' : '0.2';
+            item.style.transform  = show ? 'scale(1)' : 'scale(0.97)';
+            item.style.pointerEvents = show ? '' : 'none';
+            item.style.transition = 'opacity .3s, transform .3s';
+        });
+    });
+});
+</script>
+</body>
+</html>
