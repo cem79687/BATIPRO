@@ -43,12 +43,12 @@
 
 
 <!-- ══ 1. HERO ══ -->
-<section class="hero" id="accueil">
+<section class="hero fade-in" id="accueil">
     <div class="hero-bg"></div>
     <div class="hero-inner">
         <div class="hero-text">
             <div class="hero-label">
-                <span class="dot"></span> Mouy &amp; l'Oise (60)
+                <span class="dot"></span> Mouy &amp; l'Oise (60) Val-d'Oise (95)
             </div>
             <h1>
                 L'artisanat <br>
@@ -76,13 +76,13 @@
 
 
 <!-- ══ 2. TRUST BAR ══ -->
-<div class="trust-bar">
+<div class="trust-bar fade-in">
     <div class="trust-inner">
         <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span>Garantie Décennale</span></div>
         <div class="trust-sep"></div>
         <div class="trust-item"><i class="fa-solid fa-certificate"></i><span>Certifié RGE</span></div>
         <div class="trust-sep"></div>
-        <div class="trust-item"><i class="fa-solid fa-award"></i><span>Qualibat</span></div>
+        
         <div class="trust-sep"></div>
         <div class="trust-item"><i class="fa-solid fa-clock-rotate-left"></i><span>Réponse 48h</span></div>
         <div class="trust-sep"></div>
@@ -92,7 +92,7 @@
 
 
 <!-- ══ 3. À PROPOS ══ -->
-<section class="about" id="apropos">
+<section class="about fade-in" id="apropos">
     <div class="about-inner">
 
         <div class="about-visual">
@@ -142,7 +142,7 @@
 
 
 <!-- ══ 4. PRESTATIONS ══ -->
-<section class="prestations" id="prestations">
+<section class="prestations fade-in" id="prestations">
     <div class="section-head">
         <p class="section-eyebrow">Ce que nous faisons</p>
         <h2>Nos Prestations</h2>
@@ -208,7 +208,7 @@
 
 
 <!-- ══ 5. AVIS ══ -->
-<section class="avis" id="avis">
+<section class="avis fade-in" id="avis">
     <div class="section-head">
         <p class="section-eyebrow">Ils nous font confiance</p>
         <h2>Avis clients</h2>
@@ -259,7 +259,7 @@
 
 
 <!-- ══ PARTENAIRES ══ -->
-<div class="partners">
+<div class="partners fade-in">
     <div class="partners-inner">
         <span class="partners-label">Matériaux de référence</span>
         <div class="partners-list">
@@ -270,7 +270,7 @@
 
 
 <!-- ══ FOOTER ══ -->
-<footer class="footer">
+<footer class="footer fade-in">
     <div class="footer-inner">
         <div class="footer-brand">
             <span class="brand-name">BATI PRO</span>
@@ -344,7 +344,7 @@ fixMobilePad();
 const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }});
 }, { threshold: 0.1 });
-document.querySelectorAll('.presta-card, .review-card, .value-item').forEach(el => io.observe(el));
+document.querySelectorAll('.presta-card, .review-card, .value-item, .fade-in').forEach(el => io.observe(el));
 </script>
 </body>
 </html>

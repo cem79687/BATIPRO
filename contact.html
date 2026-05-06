@@ -41,7 +41,7 @@
 
 
 <!-- ══ PAGE HERO ══ -->
-<div class="page-hero">
+<div class="page-hero fade-in">
     <div class="page-hero-inner">
         <p class="section-eyebrow" style="color:rgba(255,255,255,.55);">Parlons de votre projet</p>
         <h1>Devis Gratuit</h1>
@@ -56,7 +56,7 @@
 
 
 <!-- ══ CONTENU CONTACT ══ -->
-<div class="contact-section">
+<div class="contact-section fade-in">
 
     <!-- ── COLONNE GAUCHE : infos ── -->
     <div class="contact-info">
@@ -221,7 +221,7 @@
 
 
 <!-- ══ FOOTER ══ -->
-<footer class="footer">
+<footer class="footer fade-in">
     <div class="footer-inner">
         <div class="footer-brand">
             <span class="brand-name">BATI PRO</span><span class="brand-amp"> &amp; CO</span>
@@ -369,6 +369,12 @@ form.addEventListener('submit', async (e) => {
 form.querySelectorAll('input, select, textarea').forEach(el => {
     el.addEventListener('focus', () => el.style.borderColor = '');
 });
+
+/* ── Intersection Observer pour animations fade-in ── */
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
