@@ -168,7 +168,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     position: absolute; inset: 0;
     background:
         linear-gradient(135deg, rgba(10,33,40,.90) 35%, rgba(27,175,191,.40) 100%),
-        url('images/raval.jpg') center/cover no-repeat;
+        url('images/facade-pierre-reconstruction.jpg') center/cover no-repeat;
     z-index: 0;
 }
 .hero-inner {

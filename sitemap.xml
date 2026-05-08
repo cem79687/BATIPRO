@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — BATI PRO & CO
+  https://www.batipro-and-co.fr/sitemap.xml
+  ⚠ Mettre à jour <lastmod> après chaque modification majeure
+  ⚠ Soumettre dans Google Search Console après mise en ligne
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Accueil — priorité maximale -->
+  <url>
+    <loc>https://www.batipro-and-co.fr/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Réalisations — contenu visuel riche, bon pour le SEO image -->
+  <url>
+    <loc>https://www.batipro-and-co.fr/realisations.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact — page de conversion -->
+  <url>
+    <loc>https://www.batipro-and-co.fr/contact.html</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

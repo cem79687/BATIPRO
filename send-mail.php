@@ -15,7 +15,7 @@
 
 /* ── 1. CONFIG — À PERSONNALISER ─────────────────────── */
 define('DEST_EMAIL',    'contactbatipro.co@gmail.com'); // Email de réception
-define('FROM_EMAIL',    'noreply@votredomaine.fr');      // Email expéditeur (domaine hébergé)
+define('FROM_EMAIL',    'noreply@batipro-and-co.fr');      // Email expéditeur (domaine hébergé)
 define('FROM_NAME',     'BATI PRO & CO — Formulaire');
 define('SUBJECT_PREFIX','[Devis BPC]');
 define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5 Mo par fichier
