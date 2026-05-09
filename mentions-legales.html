@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentions légales & Politique de confidentialité – BATI PRO & CO</title>
-    <meta name="description" content="Mentions légales, politique de confidentialité et informations RGPD de BATI PRO & CO, entreprise de bâtiment à Mouy (Oise 60).">
     <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://www.batipro-and-co.fr/mentions-legales.html">
-    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -63,9 +60,16 @@
         .back-btn {
             display: inline-flex; align-items: center; gap: .5rem;
             color: var(--c-teal); font-weight: 700; font-size: .85rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2rem; padding: .75rem 1rem;
+            border-radius: var(--r-sm); background: rgba(27,175,191,.08);
+            border: 1px solid transparent; transition: background .2s, color .2s, transform .2s, border-color .2s;
         }
-        .back-btn:hover { color: var(--c-teal-d); }
+        .back-btn:hover {
+            color: var(--c-teal-d);
+            background: rgba(27,175,191,.18);
+            border-color: rgba(27,175,191,.25);
+            transform: translateX(-1px);
+        }
         @media (max-width: 768px) { .legal-wrap { padding: 3rem 1.25rem 4rem; } }
     </style>
 </head>
@@ -237,6 +241,7 @@
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-brand">
+            <img src="images/logo-bpc.svg" alt="Logo BPC" class="brand-logo" width="40" height="40">
             <span class="brand-name">BATI PRO</span><span class="brand-amp"> &amp; CO</span>
             <p>Votre partenaire de confiance pour tous vos travaux dans l'Oise.</p>
             <div class="footer-socials">
@@ -262,7 +267,7 @@
     </div>
     <div class="footer-bottom">
         <div class="footer-bottom-inner">
-            <p>© 2026 BATI PRO &amp; CO — Miroslav KONALIEV</p>
+            <p>© 2025 BATI PRO &amp; CO — Miroslav KONALIEV</p>
             <p><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html">Politique de confidentialité</a></p>
         </div>
     </div>
