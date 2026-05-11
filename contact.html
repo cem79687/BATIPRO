@@ -75,11 +75,94 @@
     <link rel="apple-touch-icon"                  href="images/favicon.png">
 
     <!-- ═══ POLICES ═══ -->
+    <!-- ═══ POLICES ASYNC (non-bloquant) ═══ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"></noscript>
+
+    <!-- ═══ FONT AWESOME ASYNC (non-bloquant, économie ~950ms) ═══ -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <!-- ═══ PRELOAD LCP ═══ -->
+
+    <!-- ═══ CSS CRITIQUE INLINE (0ms bloquant) ═══ -->
+    <style>@font-face{font-family:'Montserrat';font-display:swap;}
+:root{--c-teal:#1BAFBF;--c-teal-d:#0D8A99;--c-teal-l:#2EC4D6;--c-navy:#0A2128;--c-ink:#1C2E32;--c-slate:#4A5E62;--c-muted:#7A9298;--c-border:#E0EAEC;--c-bg:#F4F9FA;--c-white:#FFFFFF;--f-display:'Montserrat',sans-serif;--f-body:'Montserrat',sans-serif;--r-sm:6px;--r-md:12px;--r-lg:20px;--shadow-sm:0 2px 8px rgba(10,33,40,.06);--shadow-md:0 8px 24px rgba(10,33,40,.10);--shadow-lg:0 20px 48px rgba(10,33,40,.14);--nav-h:70px;--wrap:1160px;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--f-body);color:var(--c-ink);background:var(--c-white);line-height:1.65;}
+img{display:block;max-width:100%;object-fit:cover;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 2rem;}
+.btn-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--c-teal);color:#fff;font-weight:700;font-size:.9rem;padding:.9rem 2rem;border-radius:var(--r-md);transition:background .22s,transform .18s;white-space:nowrap;letter-spacing:.3px;}
+.btn-cta:hover{background:var(--c-teal-d);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.85);font-weight:600;font-size:.9rem;padding:.9rem 1.5rem;border-radius:var(--r-md);border:1.5px solid rgba(255,255,255,.28);transition:border-color .2s,background .2s;white-space:nowrap;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);}
+.header{position:sticky;top:0;z-index:900;height:var(--nav-h);background:rgba(255,255,255,.97);border-bottom:1px solid var(--c-border);backdrop-filter:blur(12px);transition:box-shadow .3s;}
+.header.is-scrolled{box-shadow:var(--shadow-md);}
+.nav-inner{max-width:var(--wrap);margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;}
+.brand-logo{flex-shrink:0;}
+.brand-name{font-family:var(--f-display);font-size:1.2rem;font-weight:800;color:var(--c-navy);letter-spacing:-.3px;}
+.brand-amp{font-family:var(--f-display);font-size:1.2rem;font-weight:800;color:var(--c-teal);}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{position:relative;color:var(--c-ink);font-family:var(--f-display);font-size:.82rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:color .2s;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--c-teal);transition:width .25s;border-radius:2px;}
+.nav-links a:hover{color:var(--c-teal);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a.active{color:var(--c-teal);}
+.nav-btn{background:var(--c-teal)!important;color:#fff!important;padding:.5rem 1.25rem;border-radius:var(--r-sm);font-size:.8rem!important;transition:background .2s!important;}
+.nav-btn::after{display:none!important;}
+.nav-btn:hover{background:var(--c-teal-d)!important;}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;padding:5px;}
+.burger span{display:block;width:100%;height:2px;background:var(--c-ink);border-radius:2px;transition:transform .3s,opacity .3s;}
+.burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.is-open span:nth-child(2){opacity:0;}
+.burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:800;}
+.nav-backdrop.is-open{display:block;}
+.hero{margin-top:0;min-height:92vh;background:linear-gradient(135deg,var(--c-navy) 0%,#1c3a3e 50%,var(--c-teal-d) 100%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding-top:var(--nav-h);}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,33,40,.90) 35%,rgba(27,175,191,.40) 100%),url('images/facade-pierre-reconstruction.jpg') center/cover no-repeat;z-index:0;}
+.hero-inner{position:relative;z-index:1;max-width:var(--wrap);margin:0 auto;padding:5rem 2rem 4rem;display:flex;flex-direction:column;gap:2.5rem;}
+.hero-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);}
+.dot{width:8px;height:8px;background:var(--c-teal);border-radius:50%;display:inline-block;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(27,175,191,.5);}50%{box-shadow:0 0 0 6px rgba(27,175,191,0);}}
+.hero-text h1{font-family:var(--f-display);font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:800;line-height:1.04;margin-bottom:1.25rem;max-width:700px;color:#fff;}
+.hero-text h1 em{font-style:normal;color:var(--c-teal-l);}
+.hero-text p{font-size:clamp(.95rem,2vw,1.1rem);color:rgba(255,255,255,.7);max-width:520px;margin-bottom:2.5rem;font-weight:400;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;}
+.trust-bar{background:var(--c-navy);color:#fff;}
+.trust-inner{max-width:var(--wrap);margin:0 auto;padding:0 2rem;display:flex;justify-content:center;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:.6rem;padding:1rem 1.75rem;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.75);letter-spacing:.3px;}
+.trust-item i{color:var(--c-teal);font-size:.9rem;}
+.trust-sep{width:1px;height:18px;background:rgba(255,255,255,.12);align-self:center;}
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;padding:.85rem 1rem;background:var(--c-white);border-top:1px solid var(--c-border);box-shadow:0 -4px 20px rgba(0,0,0,.1);gap:.75rem;}
+.mc-call{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem;background:var(--c-navy);color:#fff;font-weight:700;font-size:.85rem;border-radius:var(--r-sm);}
+.mc-devis{flex:1.3;display:flex;align-items:center;justify-content:center;padding:.85rem;background:var(--c-teal);color:#fff;font-weight:700;font-size:.85rem;border-radius:var(--r-sm);transition:background .2s;}
+.mc-devis:hover{background:var(--c-teal-d);}
+@media(max-width:768px){.burger{display:flex;}.nav-links{position:fixed;top:0;right:-100%;width:min(300px,82vw);height:100dvh;background:var(--c-white);flex-direction:column;align-items:flex-start;padding:calc(var(--nav-h) + 1.5rem) 2rem 2rem;gap:0;z-index:850;transition:right .35s cubic-bezier(.4,0,.2,1);box-shadow:-12px 0 40px rgba(0,0,0,.12);border-left:1px solid var(--c-border);}.nav-links.is-open{right:0;}.nav-links a{display:block;padding:1rem 0;font-size:.9rem;border-bottom:1px solid var(--c-border);width:100%;}.nav-links a::after{display:none;}.nav-btn{margin-top:1.25rem;width:100%;text-align:center;padding:.8rem!important;}.hero{min-height:auto;padding:2rem 0 4rem;}.hero-inner{padding:3rem 1.5rem 2rem;gap:2rem;}.hero-actions{flex-direction:column;}.hero-actions a{width:100%;justify-content:center;}.trust-item{padding:.85rem 1rem;font-size:.72rem;}.trust-sep{display:none;}.mobile-cta{display:flex;}}</style>
+    <!-- ═══ CSS COMPLET — chargé après rendu initial ═══ -->
+    <script>
+    // Charge style.css sans bloquer le rendu ni le bfcache
+    (function(){
+      var d=document,l=d.createElement('link');
+      l.rel='stylesheet';l.href='style-contact.css';
+      d.head.appendChild(l);
+      // Restauration bfcache
+      window.addEventListener('pageshow',function(e){
+        if(e.persisted && !d.querySelector('link[href="style.css"]')){
+          var r=d.createElement('link');r.rel='stylesheet';r.href='style-contact.css';
+          d.head.appendChild(r);
+        }
+      });
+    })();
+    </script>
+    <noscript><link rel="stylesheet" href="style-contact.css"></noscript>
 </head>
 <body>
 
@@ -112,8 +195,8 @@
 
 
 <!-- ══ PAGE HERO ══ -->
-<div class="page-hero fade-in">
-    <div class="page-hero-inner">
+<div class="hero fade-in">
+    <div class="hero-inner">
         <p class="section-eyebrow" style="color:rgba(255,255,255,.55);">Parlons de votre projet</p>
         <h1>Devis Gratuit</h1>
         <p>Réponse garantie sous 48h · Pas d'engagement</p>
@@ -139,7 +222,7 @@
         <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
             <div>
-                <h4>Téléphone</h4>
+                <h3>Téléphone</h3>
                 <a href="tel:0686922927">06 86 92 29 27</a>
             </div>
         </div>
@@ -147,7 +230,7 @@
         <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
             <div>
-                <h4>Email</h4>
+                <h3>Email</h3>
                 <a href="mailto:contactbatipro.co@gmail.com">contactbatipro.co@gmail.com</a>
             </div>
         </div>
@@ -155,13 +238,13 @@
         <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
-                <h4>Adresse</h4>
+                <h3>Adresse</h3>
                 <p>15 rue Noël Ruffier<br>60 250 MOUY</p>
             </div>
         </div>
 
         <div class="horaires">
-            <h4>Horaires</h4>
+            <h3>Horaires</h3>
             <div class="horaire-row"><strong>Lundi – Vendredi</strong><span>7h00 – 18h00</span></div>
             <div class="horaire-row"><strong>Samedi</strong><span>8h00 – 13h00</span></div>
             <div class="horaire-row"><strong>Dimanche</strong><span>Fermé</span></div>
@@ -302,12 +385,12 @@
             <div class="footer-socials">
                 <!-- Remplacez href="#" par vos vrais liens -->
                 <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/batiproco?igsh=MXJzeXlwYWt3NGRhcw%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@bati.pro.co?_r=1&_t=ZN-96H8leArA0s" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
         <div class="footer-nav">
-            <h4>Navigation</h4>
+            <h3>Navigation</h3>
             <ul>
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#prestations">Prestations</a></li>
@@ -317,7 +400,7 @@
             </ul>
         </div>
         <div class="footer-contact">
-            <h4>Contact</h4>
+            <h3>Contact</h3>
             <p><i class="fa-solid fa-location-dot"></i> 15 rue Noël Ruffier, 60 250 Mouy</p>
             <p><i class="fa-solid fa-phone"></i><a href="tel:0686922927">06 86 92 29 27</a></p>
             <p><i class="fa-solid fa-envelope"></i><a href="mailto:contactbatipro.co@gmail.com">contactbatipro.co@gmail.com</a></p>
