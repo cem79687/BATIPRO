@@ -155,7 +155,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
       d.head.appendChild(l);
       // Restauration bfcache
       window.addEventListener('pageshow',function(e){
-        if(e.persisted && !d.querySelector('link[href="style.css"]')){
+        if(e.persisted && !d.querySelector('link[href="style-contact.css"]')){
           var r=d.createElement('link');r.rel='stylesheet';r.href='style-contact.css';
           d.head.appendChild(r);
         }
@@ -186,7 +186,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
             <a href="index.html#avis">Avis</a>
             <a href="contact.html" class="nav-btn active">Devis gratuit</a>
         </nav>
-        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -274,33 +274,33 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
             <span id="errorMsg">Une erreur est survenue, veuillez réessayer ou appeler directement au 06 86 92 29 27.</span>
         </div>
 
-        <form id="contactForm" novalidate>
+        <form id="contactForm" action="send-mail.php" method="post" enctype="multipart/form-data" novalidate>
 
             <div class="form-row">
                 <div class="form-field">
-                    <label>Prénom <span class="form-req">*</span></label>
-                    <input type="text" name="prenom" id="prenom" placeholder="Jean" autocomplete="given-name">
+                    <label for="prenom">Prénom <span class="form-req">*</span></label>
+                    <input type="text" name="prenom" id="prenom" placeholder="Jean" autocomplete="given-name" required>
                 </div>
                 <div class="form-field">
-                    <label>Nom <span class="form-req">*</span></label>
-                    <input type="text" name="nom" id="nom" placeholder="Dupont" autocomplete="family-name">
+                    <label for="nom">Nom <span class="form-req">*</span></label>
+                    <input type="text" name="nom" id="nom" placeholder="Dupont" autocomplete="family-name" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-field">
-                    <label>Téléphone <span class="form-req">*</span></label>
-                    <input type="tel" name="telephone" id="telephone" placeholder="06 XX XX XX XX" autocomplete="tel">
+                    <label for="telephone">Téléphone <span class="form-req">*</span></label>
+                    <input type="tel" name="telephone" id="telephone" placeholder="06 XX XX XX XX" autocomplete="tel" required>
                 </div>
                 <div class="form-field">
-                    <label>Email <span class="form-req">*</span></label>
-                    <input type="email" name="email" id="email" placeholder="jean@email.fr" autocomplete="email">
+                    <label for="email">Email <span class="form-req">*</span></label>
+                    <input type="email" name="email" id="email" placeholder="jean@email.fr" autocomplete="email" required>
                 </div>
             </div>
 
             <div class="form-field">
-                <label>Type de travaux <span class="form-req">*</span></label>
-                <select name="type_travaux" id="type_travaux">
+                <label for="type_travaux">Type de travaux <span class="form-req">*</span></label>
+                <select name="type_travaux" id="type_travaux" required>
                     <option value="" disabled selected>Sélectionnez une prestation…</option>
                     <option value="Gros œuvre / Maçonnerie">Gros œuvre / Maçonnerie</option>
                     <option value="Extension / Agrandissement">Extension / Agrandissement</option>
@@ -332,18 +332,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
             </div>
 
             <div class="form-field">
-                <label>Description du projet <span class="form-req">*</span></label>
-                <textarea name="message" id="message" placeholder="Décrivez votre projet : surface concernée, état actuel, contraintes particulières, délais souhaités…"></textarea>
+                <label for="message">Description du projet <span class="form-req">*</span></label>
+                <textarea name="message" id="message" placeholder="Décrivez votre projet : surface concernée, état actuel, contraintes particulières, délais souhaités…" required></textarea>
             </div>
 
             <!-- Upload photos (envoyées en pièce jointe) -->
             <div class="form-field">
-                <label>Photos du chantier <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--c-muted)">(facultatif · jpg/png · max 5 Mo)</span></label>
+                <label>Photos du chantier <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--c-muted)">(facultatif · jpg/png/pdf · max 5 Mo)</span></label>
                 <div class="upload-zone">
                     <label for="photos">
                         <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <span>Cliquez pour ajouter des photos</span>
-                        <input type="file" name="photos[]" id="photos" multiple accept="image/jpeg,image/png,image/webp" style="display:none" onchange="updateFileLabel(this)">
+                        <span>Cliquez pour ajouter des fichiers</span>
+                        <input type="file" name="photos[]" id="photos" multiple accept="image/jpeg,image/png,image/webp,application/pdf,.pdf,.jpg,.jpeg,.png,.webp" style="display:none" onchange="updateFileLabel(this)">
                     </label>
                 </div>
                 <span id="fileLabel" style="font-size:.75rem;color:var(--c-muted);margin-top:.4rem;display:block;"></span>
@@ -351,10 +351,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 
             <!-- Anti-spam honeypot (champ caché) -->
             <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="csrf_token" id="csrf_token" value="">
 
             <!-- RGPD -->
             <div class="form-field" style="display:flex;align-items:flex-start;gap:.75rem;">
-                <input type="checkbox" name="rgpd" id="rgpd" style="margin-top:3px;width:auto;accent-color:var(--c-teal);">
+                <input type="checkbox" name="rgpd" id="rgpd" style="margin-top:3px;width:auto;accent-color:var(--c-teal);" required>
                 <label for="rgpd" style="text-transform:none;letter-spacing:0;font-weight:500;font-size:.8rem;color:var(--c-slate);cursor:pointer;">
                     J'accepte que mes données soient utilisées pour traiter ma demande de devis, conformément à la <a href="mentions-legales.html" style="color:var(--c-teal)">politique de confidentialité</a>. <span class="form-req">*</span>
                 </label>
@@ -383,10 +384,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
             <span class="brand-amp">&amp; CO</span>
             <p>Votre partenaire de confiance pour tous vos travaux dans l'Oise. Expertise, rigueur, passion du travail bien fait.</p>
             <div class="footer-socials">
-                <!-- Remplacez href="#" par vos vrais liens -->
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+               <a href="https://www.facebook.com/profile.php?id=61588643851756" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/batiproco?igsh=MXJzeXlwYWt3NGRhcw%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@bati.pro.co?_r=1&_t=ZN-96H8leArA0s" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+                
+            
             </div>
         </div>
         <div class="footer-nav">
@@ -454,6 +456,20 @@ function updateFileLabel(input) {
         : input.files.length + ' fichiers sélectionnés';
 }
 
+async function fetchCsrfToken() {
+    try {
+        const res = await fetch('send-mail.php?csrf=1');
+        const data = await res.json();
+        if (data.success && data.csrf_token) {
+            document.getElementById('csrf_token').value = data.csrf_token;
+        }
+    } catch (err) {
+        console.warn('Impossible de récupérer le jeton CSRF', err);
+    }
+}
+
+fetchCsrfToken();
+
 /* ── Validation & soumission AJAX vers send-mail.php ── */
 const form       = document.getElementById('contactForm');
 const submitBtn  = document.getElementById('submitBtn');
@@ -493,6 +509,16 @@ form.addEventListener('submit', async (e) => {
         errMsg.textContent = 'Merci de remplir tous les champs obligatoires (*).';
         showAlert(alertErr);
         return;
+    }
+
+    const csrfInput = document.getElementById('csrf_token');
+    if (!csrfInput.value) {
+        await fetchCsrfToken();
+        if (!csrfInput.value) {
+            errMsg.textContent = 'Impossible de sécuriser l’envoi. Rechargez la page et réessayez.';
+            showAlert(alertErr);
+            return;
+        }
     }
 
     /* Envoi AJAX avec FormData (supporte les fichiers) */

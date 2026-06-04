@@ -215,7 +215,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
       d.head.appendChild(l);
       // Restauration bfcache
       window.addEventListener('pageshow',function(e){
-        if(e.persisted && !d.querySelector('link[href="style.css"]')){
+        if(e.persisted && !d.querySelector('link[href="style-index.css"]')){
           var r=d.createElement('link');r.rel='stylesheet';r.href='style-index.css';
           d.head.appendChild(r);
         }
@@ -244,7 +244,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
             <a href="contact.html" class="nav-btn">Devis gratuit</a>
         </nav>
 
-        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -434,7 +434,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
     </div>
 
     <div class="google-score">
-        <img src="images/google-logo.svg" alt="Google" width="70">
+        <img src="images/Google-logo.png" alt="Google" width="70">
         <div class="score-info">
             <div class="stars-row">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -496,10 +496,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
             <span class="brand-amp">&amp; CO</span>
             <p>Votre partenaire de confiance pour tous vos travaux dans l'Oise. Expertise, rigueur, passion du travail bien fait.</p>
             <div class="footer-socials">
-                <!-- Remplacez href="#" par vos vrais liens -->
-                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+
+                <a href="https://www.facebook.com/profile.php?id=61588643851756" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/batiproco?igsh=MXJzeXlwYWt3NGRhcw%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@bati.pro.co?_r=1&_t=ZN-96H8leArA0s" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+                
             </div>
         </div>
         <div class="footer-nav">
